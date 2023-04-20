@@ -894,8 +894,6 @@ let tags = [
 			"time",
 			"death",
 			"god",
-			"woman",
-			"man",
 			"love",
 			"universe",
 			"power",
@@ -903,14 +901,7 @@ let tags = [
 			"understanding",
 			"change",
 			"joy",
-			"girlfriend",
-			"moon",
-			"sun",
-			"reward",
-			"fear",
-			"finger",
 			"clock",
-			"heart",
 			"space",
 			"heaven"
 		]
@@ -1930,7 +1921,6 @@ let tags = [
 	{
 		"songName": "pala-palakura-song-lyrics.txt",
 		"tags": [
-			"love",
 			"nature",
 			"beauty",
 			"nostalgia",

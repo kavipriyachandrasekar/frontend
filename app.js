@@ -1,7 +1,7 @@
 let tagInput = document.getElementById('tagInput')
 let songsContainer = document.querySelector('.songsContainer')
 let statusSpan = document.querySelector('.status')
-let vibeIt = document.querySelector('.vibeIt')
+let vibeIt = document.querySelector('.vibeIt')  
 
 const API_ENDPOINT = `http://localhost:5000`
 
@@ -10,7 +10,7 @@ vibeIt.addEventListener('click', async (e) => {
     let request = await fetch(`${API_ENDPOINT}?sentence=${tagInput.value}`)
     let response = await request.json()
     getSongs(response)
-    statusSpan.innerHTML = 'Done!'
+    // statusSpan.innerHTML = 'Done!'   
 })
 
 function getSongs(tagsQuery) {
@@ -49,7 +49,7 @@ function getSongs(tagsQuery) {
         html += generateSongCard(result)
     })
 
-    console.log(results)
+    // console.log(results)
 
     songsContainer.innerHTML = html
 }
