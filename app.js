@@ -6,11 +6,12 @@ let vibeIt = document.querySelector('.vibeIt')
 const API_ENDPOINT = `http://localhost:5000`
 
 vibeIt.addEventListener('click', async (e) => {
+    songsContainer.innerHTML = ''    
     statusSpan.innerHTML = 'Getting the tags...'
     let request = await fetch(`${API_ENDPOINT}?sentence=${tagInput.value}`)
     let response = await request.json()
     getSongs(response)
-    // statusSpan.innerHTML = 'Done!'   
+    statusSpan.innerHTML = 'Done!'   
 })
 
 function getSongs(tagsQuery) {
@@ -76,9 +77,11 @@ function generateSongCard(song) {
         let html = `
         <div class="songCard">
             <span class="songName">${songName}</span>
-            <span class="matchPercent">${song?.vibeMatch.toFixed(1)}, ${song?.exploreMatch.toFixed(1)}</span>
         </div>
         `
+        //     <span class="matchPercent">${song?.vibeMatch.toFixed(1)}, ${song?.exploreMatch.toFixed(1)}</span>
+        // </div>
+        // `
         return html
     } catch (error) { }
 }
