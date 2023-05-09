@@ -140,6 +140,41 @@ button:active {
     background-color: #fafafa;
 }
 
+.dropContainer {
+    align-items: center;
+    border: 2px dashed #555;
+    border-radius: 10px;
+    color: #000000;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 90px;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    padding: 20px;
+    position: relative;
+}
+
+.spanClass {
+    color: #000000;
+    font-size: 20px;
+    font-weight: 700;
+    padding-bottom: .5rem;
+    text-align: center;
+}
+
+input[type="file"] {
+    background: #fff;
+    border: 1px solid #555;
+    border-radius: 10px;
+    color: #000;
+    font-family: Inter;
+    max-width: 100%;
+    padding: 5px;
+    width: 250px;
+}
+
 @media screen and (max-width: 480px) {
     .songCard {
         min-width: 350px;
