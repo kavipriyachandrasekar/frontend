@@ -121,3 +121,8 @@ function computeSongMatch(songItem, tagsQueryArray) {
 
     return song
 }
+
+function convertToArray(string) {
+    let array = string.split(', ')
+    return array
+}
