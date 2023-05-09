@@ -8,8 +8,8 @@ const API_ENDPOINT = `https://tvrsimhan-text-to-tags.hf.space/run/predict`
 vibeIt.addEventListener('click', async (e) => {
     songsContainer.innerHTML = ''    
     statusSpan.innerHTML = 'Getting the tags...'
-    let request = await getTags(tagInput.value)
-    let response = await request.json()
+    let response = await getTags(tagInput.value)
+    // let response = await request.json()
     getSongs(response)
     statusSpan.innerHTML = 'Done!'   
 })
