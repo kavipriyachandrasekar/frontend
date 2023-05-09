@@ -3,16 +3,31 @@ let songsContainer = document.querySelector('.songsContainer')
 let statusSpan = document.querySelector('.status')
 let vibeIt = document.querySelector('.vibeIt')  
 
-const API_ENDPOINT = `http://localhost:5000`
+const API_ENDPOINT = `https://tvrsimhan-text-to-tags.hf.space/run/predict`
 
 vibeIt.addEventListener('click', async (e) => {
     songsContainer.innerHTML = ''    
     statusSpan.innerHTML = 'Getting the tags...'
-    let request = await fetch(`${API_ENDPOINT}?sentence=${tagInput.value}`)
+    let request = getTags(tagInput.value)
     let response = await request.json()
     getSongs(response)
     statusSpan.innerHTML = 'Done!'   
 })
+
+async function getTags(sentence) {
+    let response = await fetch(API_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            data: [
+                sentence
+            ]
+        })
+    })
+    let json = await response.json()
+    return json.data[0]
+}
+
 
 function getSongs(tagsQuery) {
     let SHOW_MATCHES = 5
