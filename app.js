@@ -32,6 +32,7 @@ async function getTags(sentence) {
 function getSongs(tagsQuery) {
     let SHOW_MATCHES = 5
 
+    tagsQuery = convertToArray(tagsQuery)
     let results = searchForTags(tagsQuery)
 
     let html = ''
